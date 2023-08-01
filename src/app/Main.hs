@@ -1,8 +1,12 @@
 module Main where
 
-import qualified MyLib (someFunc)
+import Isbike
 
 main :: IO ()
 main = do
   putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  -- https://data.ibb.gov.tr/dataset/isbike-stations-status-web-service
+  putStrLn "Getting data from İsbike Open Data API..."
+  getIsbikeData
+  putStrLn "Converting data to GeoJSON..."
+  processIsbike
